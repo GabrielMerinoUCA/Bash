@@ -1,0 +1,135 @@
+\chapter{If statements}
+
+\section{If condition}
+
+If statements are weird in bash. First of all, bash is very space sensitive so manage with care.
+Then the syntax is very atypical.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4-bash},
+    breaklines=true]
+{../4-bash/4-bash.sh}
+
+Now, you might be wondering why are we using a command flag inside our if statement? And the reason
+for that is because actually, the square bracket is a command itself. It's an abreviation of the
+test command. The -eq flag stands for equals to and expects an argument afterward. The closing
+square bracket is just expected by the alias definition of the test command.
+
+\section{A more modern approach for number comparisson}
+
+Now, if you wanted to use your typical ==, !=, <, etc operators,you would use a double parentheses
+command. This is as modern as the eyar 1997 can be labeled modern, which is not at all. So use this
+if you want a more normal experience.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.1-bash},
+    breaklines=true]
+{../4-bash/4.1-bash.sh}
+\pagebreak
+\section{Else statement}
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.2-bash},
+    breaklines=true]
+{../4-bash/4.2-bash.sh}
+
+\section{Not operator}
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.3-bash},
+    breaklines=true]
+{../4-bash/4.3-bash.sh}
+
+\section{-f flag}
+
+Since the `[]' operator is a bash command, it can interact with directories, files and such.
+This means we can compare agains files or directories directly. The `-f' flag is just one way
+to do this, where it checks wether a path exists AND is a file. if you just wanted to see if 
+it existed as a file or directory, you'd use the -e flag.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.4-bash},
+    breaklines=true]
+{../4-bash/4.4-bash.sh}
+\pagebreak
+\section{A more ``practical'' example}
+
+We want to check if a command exists, if it does run it, otherwise install it and then run it.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.5-bash},
+    breaklines=true]
+{../4-bash/4.5-bash.sh}
+
+\section{The better way of doing it}
+
+We used the test command to check wether a file existed in our system. However, this is a very
+general way of doing it, the shell has built in ways of managin this specific situation.
+We want to check not if a file exist but if a command exists. So we'll use a Shell builtin
+known as a command. Shell builtins are like any other commands but they are baked directly into
+the shell as oposed of being binary files. A common example of this would be the cd command.
+If you wish to know whether a command is a shell builtin, use the type command.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.6-bash},
+    breaklines=true]
+{../4-bash/4.6-bash.sh}
+
+The reason why you wouldn't want to use which is because the which command doesn't contemplate 
+shell buitlin commands so it might not work with every command. Also command tends to be faster 
+since it doesn't require to open up a file and do many processes but is baked into the running process.
+known as the shell.
+\pagebreak
+
+\section{Logic operators}
+
+We already saw the AND operator. Naturally, it can also be used inside the if statement argument.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.7-bash},
+    breaklines=true]
+{../4-bash/4.7-bash.sh}
+
+\section{Else if}
+
+Of course any well self respecting language would have the inclussion of the humble else if.
+
+\lstinputlisting[
+    language=bash,
+    caption={4-bash.sh},
+    captionpos=t,
+    label={lst:4.8-bash},
+    breaklines=true]
+{../4-bash/4.8-bash.sh}
+
+
+\section{Ok but how does the if statement actually work?}
+
+The if statements in bash scripting don't work with your typical boolean values, they are not expecting
+a true nor a false. What they work with is exit codes. If a command ran successfully, it will return a 0 exit code
+otherwise, any other number. So 0 behaves like true, any other value behaves like false. This is the 
+opposite of how you'd expect it to work. More on exit codes next chapter.

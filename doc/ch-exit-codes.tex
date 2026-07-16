@@ -1,0 +1,66 @@
+\chapter{Exit codes}
+
+\section{Check the exit code of the previous command}
+
+you can check the exit code of previous commands using the dollar sign. If it's 0, it means
+success. Otherwise, it means failure. The number might give you a clue on the failure actually 
+was about.
+
+\lstinputlisting[
+    language=bash,
+    caption={5-bash.sh},
+    captionpos=t,
+    label={lst:5-bash},
+    breaklines=true]
+{../5-bash/5-bash.sh}
+
+\section{Redirects}
+
+Redirects allow us to save the output of a command directly into a file.
+
+\lstinputlisting[
+    language=bash,
+    caption={5-bash.sh},
+    captionpos=t,
+    label={lst:5.1-bash},
+    breaklines=true]
+{../5-bash/5.1-bash.sh}
+
+Something to consider is that since the file doesn't follow a strict path, the script will create
+the file in your current path where you executed the script. 
+
+\section{Careful with \$?}
+
+Something you have to remember is that \$? will only give you the exit code of the last command
+so if you want to check the first command, you have to store the value in another variable
+
+\lstinputlisting[
+    language=bash,
+    caption={5-bash.sh},
+    captionpos=t,
+    label={lst:5.2-bash},
+    breaklines=true]
+{../5-bash/5.2-bash.sh}
+
+\section{Manually exit}
+
+If you didn't want to store the exit value in a variable, which can get convoluted real quick,
+you can manually exit your script with a custom code.
+
+\lstinputlisting[
+    language=bash,
+    caption={5-bash.sh},
+    captionpos=t,
+    label={lst:5.3-bash},
+    breaklines=true]
+{../5-bash/5.3-bash.sh}
+
+\section{The final version of the 5-bash.sh script}
+
+\lstinputlisting[
+    language=bash,
+    caption={5-bash.sh},
+    captionpos=t,
+    label={lst:5.4-bash},
+    breaklines=true]
+{../5-bash/5.4-bash.sh}

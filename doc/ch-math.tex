@@ -1,0 +1,62 @@
+\chapter{Math in Bash}
+
+\section{how to run basic math operators}
+
+For you to make basic operations like 10 + 9, you need to use the ``evaluate expression" command.
+
+\lstinputlisting[
+    language=bash,
+    caption={3-bash.sh},
+    captionpos=t,
+    label={lst:3-bash},
+    breaklines=true]
+{../3-bash/3-bash.sh}
+
+\section{Wild cards}
+
+You might think that doing a multiplication is as simple as doing ``expr 10 * 10'' but you'd
+be wrong. This is because the asterisk character is a wild card. Wild cards are essentially
+special caracters that return specific files depending on their own criteria.
+For example, *.log essentially looks for all files that end in .log and returns them to the 
+command. this means that a command might perform an operation on all files that end in .log
+as oposed of only doing one operation. Using `*' without anything else means to literally use
+everything.\\
+So how do we solve this issue? we have to use the escape character
+
+\lstinputlisting[
+    language=bash,
+    caption={3-bash.sh},
+    captionpos=t,
+    label={lst:3.1-bash},
+    breaklines=true]
+{../3-bash/3.1-bash.sh}
+
+
+\section{Math with variables}
+
+Going back to the previous chapter, we can use variables with values and perform operations
+
+\lstinputlisting[
+    language=bash,
+    caption={3-bash.sh},
+    captionpos=t,
+    label={lst:3.2-bash},
+    breaklines=true]
+{../3-bash/3.2-bash.sh}
+\pagebreak
+
+
+\section{Arithmetic expansion}
+
+Now we can continue using expr or use the more modern and prefered way of doing math in general
+which is using arithmetic expansions. This don't have space constraints nor require flags.
+
+\lstinputlisting[
+    language=bash,
+    caption={3-bash.sh},
+    captionpos=t,
+    label={lst:3.3-bash},
+    breaklines=true]
+{../3-bash/3.3-bash.sh}
+
+As we'll see later, using the subshell isn't required for if conditionals.

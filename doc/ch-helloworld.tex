@@ -1,0 +1,75 @@
+\chapter{Hello World}
+
+\section{To create a bash script}
+
+First, we'll have to create a file with a .sh extention. Then we can edit it in with whatever command we want.\\
+
+\lstinputlisting[
+    language=bash, 
+    caption={1-bash.sh},
+    captionpos=t,
+    label={lst:1-bash}, 
+    mathescape=true, 
+    breaklines=true]
+{../1-bash/1-bash.sh}
+
+The way bash scripts are execute is top to bottom.
+
+\section{how to run it?}
+
+First we'll have to change the script properties from the terminal. \\
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t, 
+    label={lst:1-terminal}, 
+    mathescape=true,
+    breaklines=true]
+sudo chmod +x 1-bash.sh
+\end{lstlisting}
+
+This makes the script executable. Then we just have to execute it from the terminal:\\
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:1.1-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+./1-bash.sh
+\end{lstlisting}
+\newpage
+
+\section{Good practice for new scripts}
+
+What we are using here is a "shebang". This tells the interpreter whether they should be the ones 
+executing this script. Otherwise, they should call the specified interpreter to execute the script.
+
+\lstinputlisting[
+    language=bash, 
+    caption={1-bash.sh},
+    captionpos=t,
+    label={lst:1.1-bash}, 
+    mathescape=true, 
+    breaklines=true]
+{../1-bash/1.1-bash.sh}
+
+\section{Comments}
+
+You can add comments to you script using `\#' followed by text.\\
+
+\section{Hello World!}
+
+So to write anything out, you use the echo command. Here we'll do what we always do at the beginning
+and write our hello world.\\
+
+\lstinputlisting[
+    language=bash, 
+    caption={1-bash.sh},
+    captionpos=t,
+    label={lst:1.2-bash}, 
+    mathescape=true, 
+    breaklines=true]
+{../1-bash/1.2-bash.sh}

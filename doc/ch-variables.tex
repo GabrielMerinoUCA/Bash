@@ -1,0 +1,70 @@
+\chapter{Variables}
+
+\section{Definition and usage}
+
+defining a variable is completely different than using it. To use it, you have to reference the variable
+simlar to C.\\
+
+\lstinputlisting[
+    language=bash,
+    caption={2-bash.sh},
+    captionpos=t,
+    label={lst:2-bash},
+    breaklines=true]
+{../2-bash/2-bash.sh}
+
+\section{Variables are temporary}
+
+This type of variable definition would not survive longer than the session. What I mean by session
+is that once you close the terminal or logout that specific user, the variables are going to be erased.
+This means that defining the variables using scripts can garantee that needed variables are going to 
+be available for the script itself.
+
+\section{String interpolation available}
+
+If you know about string interpolation, you know the dollar sign is the standard way to reference a 
+variable inside a string and this mechanism also works in bash.
+
+\lstinputlisting[
+    language=bash,
+    caption={2-bash.sh},
+    captionpos=t,
+    label={lst:2.1-bash},
+    breaklines=true]
+{../2-bash/2.1-bash.sh}
+
+
+Also, it is required to use double quotes as that is the type of string that bash understands
+has the capabilities for string interpolation. If you use single strings, the variable won't be
+referenced and instead, ``\$myVariable" would be directly displayed \\
+
+Also, you can use \textbackslash{}\texttt{"} if you want to display a double quote character in your string.
+
+\section{Store command outputs in variables}
+
+There is this concept known as a subshell. It essentially executes a command inside a command.
+This allows us to store the output of a command in a variable.
+
+\lstinputlisting[
+    language=bash,
+    caption={2-bash.sh},
+    captionpos=t,
+    label={lst:2.2-bash},
+    breaklines=true]
+{../2-bash/2.2-bash.sh}
+
+\section{Environment variables}
+
+There are already some predefined variables. If you wish to see them, you can use the env
+command
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t, 
+    label={lst:2-terminal}, 
+    mathescape=true,
+    breaklines=true]
+env
+\end{lstlisting}
+

@@ -1,0 +1,37 @@
+\contentsline {chapter}{\numberline {1}Hello World}{2}{}%
+\contentsline {section}{\numberline {1.1}To create a bash script}{2}{}%
+\contentsline {section}{\numberline {1.2}how to run it?}{2}{}%
+\contentsline {section}{\numberline {1.3}Good practice for new scripts}{3}{}%
+\contentsline {section}{\numberline {1.4}Comments}{3}{}%
+\contentsline {section}{\numberline {1.5}Hello World!}{3}{}%
+\contentsline {chapter}{\numberline {2}Variables}{4}{}%
+\contentsline {section}{\numberline {2.1}Definition and usage}{4}{}%
+\contentsline {section}{\numberline {2.2}Variables are temporary}{4}{}%
+\contentsline {section}{\numberline {2.3}String interpolation available}{4}{}%
+\contentsline {section}{\numberline {2.4}Store command outputs in variables}{5}{}%
+\contentsline {section}{\numberline {2.5}Environment variables}{5}{}%
+\contentsline {chapter}{\numberline {3}Math in Bash}{6}{}%
+\contentsline {section}{\numberline {3.1}how to run basic math operators}{6}{}%
+\contentsline {section}{\numberline {3.2}Wild cards}{6}{}%
+\contentsline {section}{\numberline {3.3}Math with variables}{6}{}%
+\contentsline {section}{\numberline {3.4}Arithmetic expansion}{7}{}%
+\contentsline {chapter}{\numberline {4}If statements}{8}{}%
+\contentsline {section}{\numberline {4.1}If condition}{8}{}%
+\contentsline {section}{\numberline {4.2}A more modern approach for number comparisson}{8}{}%
+\contentsline {section}{\numberline {4.3}Else statement}{9}{}%
+\contentsline {section}{\numberline {4.4}Not operator}{9}{}%
+\contentsline {section}{\numberline {4.5}-f flag}{9}{}%
+\contentsline {section}{\numberline {4.6}A more ``practical'' example}{10}{}%
+\contentsline {section}{\numberline {4.7}The better way of doing it}{10}{}%
+\contentsline {section}{\numberline {4.8}Logic operators}{11}{}%
+\contentsline {section}{\numberline {4.9}Else if}{11}{}%
+\contentsline {section}{\numberline {4.10}Ok but how does the if statement actually work?}{11}{}%
+\contentsline {chapter}{\numberline {5}Exit codes}{12}{}%
+\contentsline {section}{\numberline {5.1}Check the exit code of the previous command}{12}{}%
+\contentsline {section}{\numberline {5.2}Redirects}{12}{}%
+\contentsline {section}{\numberline {5.3}Careful with \$?}{13}{}%
+\contentsline {section}{\numberline {5.4}Manually exit}{13}{}%
+\contentsline {section}{\numberline {5.5}The final version of the 5-bash.sh script}{13}{}%
+\contentsline {chapter}{\numberline {6}While loops}{14}{}%
+\contentsline {section}{\numberline {6.1}Basic while loop}{14}{}%
+\contentsline {section}{\numberline {6.2}The sleep command}{14}{}%
