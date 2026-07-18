@@ -40,3 +40,6 @@
 \contentsline {section}{\numberline {7.2}Starting the workflow: apt update}{16}{}%
 \contentsline {section}{\numberline {7.3}Actually installing: apt upgrade}{17}{}%
 \contentsline {section}{\numberline {7.4}The alternative: apt dist-upgrade}{17}{}%
+\contentsline {chapter}{\numberline {8}Update script}{18}{}%
+\contentsline {section}{\numberline {8.1}A script for all distros}{18}{}%
+\contentsline {section}{\numberline {8.2}A better way of writing the script}{18}{}%

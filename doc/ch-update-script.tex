@@ -1,0 +1,28 @@
+\chapter{Update script}
+
+\section{A script for all distros}
+
+Distro might have different update mechanisms. If you deal with multiple updates, this script can
+be a one fits all solution.
+
+\lstinputlisting[
+    language=bash,
+    caption={8-bash.sh},
+    captionpos=t,
+    label={lst:8-bash},
+    breaklines=true]
+{../8-bash/8-bash.sh}
+
+\section{A better way of writing the script}
+
+the script relies on the specific software to be installed. However there can be nutheads that manage
+to install pacman in debian based distros. For this nutheads, we need to check the distro installed
+opposed to the update manager.
+
+\lstinputlisting[
+    language=bash,
+    caption={8-bash.sh},
+    captionpos=t,
+    label={lst:8.1-bash},
+    breaklines=true]
+{../8-bash/8.1-bash.sh}
