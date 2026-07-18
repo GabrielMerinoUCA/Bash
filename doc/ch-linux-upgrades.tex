@@ -1,0 +1,74 @@
+\chapter{How updates work in linux}
+
+\section{Repositories}
+
+Lets start demystifying how linux installation works by starting with the place where our updates
+come from, repositories. \textbf{Repositories} are servers that contain software that is constantly
+being updated my the mantainers and where we can download our updates from. 
+\\ \\
+There is also the concept of \textbf{mirrors} which are literal copies of the repositories as 
+they have the same content (thus the name mirrors) but are located in different places. This is
+useful because you can chose mirrors that are closer to you to improve download speeds
+\\ \\
+If you want to see where the repository list is located in your computer, you can check 
+\underbar{/etc/apt/source.list.d/}
+
+\section{Starting the workflow: apt update}
+
+Each distro has their own way of updating software but we'll be looking at debian based distros
+for this one. The first thing we do is to ``\textbf{update}'':
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:7-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+apt update
+\end{lstlisting}
+
+What ``\underbar{apt update}'' does is that it checks the list of repositories and downloads a
+type of metadata known as \textbf{indexes}. These indexes contain data that apt can later use to see if
+there is a pending update for a software, how to solve dependencies, where specifically do we
+install the files from (inside the repository path), etc \dots
+\\ \\
+You see, The repositories are divided in to main paths, one known as ``\underbar{dists/}'' which contains metadata.
+Using metadata is also usefull because now we don't have to check entire gigabytes of files to see
+if there is an update available. Then we have the ``\underbar{pool/}'' path which contains the actual files to
+be downloaded.
+\\ \\
+You can check the indexes at \underbar{/var/lib/apt/lists}. Usually, the files are stored in
+compressed files.
+\pagebreak
+\section{Actually installing: apt upgrade}
+
+Now we move into the installation workflow. ``\underbar{apt upgrade}'' starts by checking those
+indexes and loading them into memory. Then it loads some sort of metadata of currently installed
+packages into memory as well which can be found at \underbar{/var/lib/dpkg/status}. This means that we now can compare the metadata of the repositories
+vs the ones corresponding to locally installed packages to see which require updates.
+\\ \\
+Something to consider is that their installation order must follow a dependency order because
+we cannot install a package that depends on another one. Because of this, apt builds a dependency
+graph, specifically a \textbf{Directed Acyclic Graph (DAG)}. DAGs are essentially like any other
+graph that have connections with directions, and are acyclic which means that no direction can 
+result in the creation of a loop.
+\\ \\
+Once we know which software must be updated and in which order, we can start downloading the packages.
+All packages are downloaded into a cache directory at \underbar{/var/cache/apt/archives/}. This
+is so if there was to be an internet outage or a package is found corrupt, the interruption wouldn't
+reset the entire progress back to 0. This implies that the cache is also checked before doing
+the installation.
+\\ \\
+Finnally, we move into the actual installation. Apt, isn't responsible for it since it cannot 
+process .deb files so it calls dpkg to handle that. \textbf{dpkg} is the package installer for .deb
+files. It will install all files in the cache respecting the order set by the DAG. We won't cover
+how dpkg works, for now\dots
+
+\section{The alternative: apt dist-upgrade}
+
+Sometimes, a package will need a new dependency that wasn't contemplated. Apt by default
+won't add any new packages on an update. Because of this, the packages will be labeled as ``held
+back''. To force apt to install new packages and resolve all sorts of dependecy issues it my encouter,
+you can use ``\underbar{apt dist-upgrade}''.
+

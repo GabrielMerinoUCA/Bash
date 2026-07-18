@@ -69,6 +69,9 @@ INPUT ch-exit-codes.aux
 INPUT ./ch-while-loop.aux
 INPUT ./ch-while-loop.aux
 INPUT ch-while-loop.aux
+INPUT ./ch-linux-upgrades.aux
+INPUT ./ch-linux-upgrades.aux
+INPUT ch-linux-upgrades.aux
 OUTPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -99,10 +102,10 @@ INPUT ./main.toc
 INPUT main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 OUTPUT main.toc
 INPUT ./ch-helloworld.tex
 INPUT ./ch-helloworld.tex
-INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 OUTPUT ch-helloworld.aux
 INPUT ./ch-helloworld.tex
 INPUT ./ch-helloworld.tex
@@ -234,6 +237,12 @@ INPUT ../6-bash/6-bash.sh
 INPUT ../6-bash/6.1-bash.sh
 INPUT ../6-bash/6.1-bash.sh
 INPUT ../6-bash/6.1-bash.sh
+INPUT ./ch-linux-upgrades.tex
+INPUT ./ch-linux-upgrades.tex
+OUTPUT ch-linux-upgrades.aux
+INPUT ./ch-linux-upgrades.tex
+INPUT ./ch-linux-upgrades.tex
+INPUT ch-linux-upgrades.tex
 INPUT main.aux
 INPUT ./ch-helloworld.aux
 INPUT ./ch-helloworld.aux
@@ -253,6 +262,9 @@ INPUT ch-exit-codes.aux
 INPUT ./ch-while-loop.aux
 INPUT ./ch-while-loop.aux
 INPUT ch-while-loop.aux
+INPUT ./ch-linux-upgrades.aux
+INPUT ./ch-linux-upgrades.aux
+INPUT ch-linux-upgrades.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
