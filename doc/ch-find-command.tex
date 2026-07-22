@@ -1,0 +1,92 @@
+\chapter{The find command}
+
+\section{What is it?}
+
+This command allows us to search for files or directories in specified paths with different options to narrow down
+the specifics of what we are looking for.
+
+\lstinputlisting[
+    language=bash,
+    caption={9-bash.sh},
+    captionpos=t,
+    label={lst:9-bash},
+    breaklines=true]
+{../9-bash/9-bash.sh}
+
+\section{The find command is very extensive}
+
+There are many options that you can use in order to customize your search without taking into account 
+we can also use wild cards in combination. First, lets take a look at the `\underbar{-type}' test expression.
+
+\lstinputlisting[
+    language=bash,
+    caption={9-bash.sh},
+    captionpos=t,
+    label={lst:9.1-bash},
+    breaklines=true]
+{../9-bash/9.1-bash.sh}
+\pagebreak
+\section{Execute commands if file is found}
+
+There is the `\underbar{-exec}' action expression which allows you to execute any other command if the
+find command successfully finds a file (exit code = 0).
+
+\lstinputlisting[
+    language=bash,
+    caption={9-bash.sh},
+    captionpos=t,
+    label={lst:9.2-bash},
+    breaklines=true]
+{../9-bash/9.2-bash.sh}
+
+Alternatively, you could use `$\backslash;$' to terminate (which is mandatory for -exec) if you know there
+is only one output from find.
+
+\section{A more practical example of the find command}
+
+say you have a list of images you wish to keep only visible to your user. You'd have to run:
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:9-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+chmod 600 -R ./Pictures/
+\end{lstlisting}
+
+We don't want the file to be executable, that's why we go with 600. There's a problem wiht this approach
+whatsoever. The ``Pictures'' directory will also be marked as rw-. This is bad because in order for anyone
+to access a directory, it must have the executable option on. This means that we need to apply chmod
+600 only to files and ignore directories and subdirectories. We could fix this using:
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:9.1-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+chmod u+x -R ./Pictures/
+\end{lstlisting}
+
+But if we were dealing with files, making them executable introduces vulnerabilities or the chance of
+bricking the system. Most likely there is a way to achieve our purpose with the chmod comman itself.
+However this is a perfect oportunity to use the find command with the \underbar{-exec} expression.
+
+
+\lstinputlisting[
+    language=bash,
+    caption={9-bash.sh},
+    captionpos=t,
+    label={lst:9.3-bash},
+    breaklines=true]
+{../9-bash/9.3-bash.sh}
+
+\pagebreak
+\section{Using the find command responsibly}
+
+Before using the \underbar{-exec} expression for anything, you should just run the find command as is
+and check if the output of it are acutally the files and directories that you wish to remove. Otherwise
+you could alter something that you shouldn't have and end up bricking your system

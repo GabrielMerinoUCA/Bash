@@ -43,3 +43,9 @@
 \contentsline {chapter}{\numberline {8}Update script}{18}{}%
 \contentsline {section}{\numberline {8.1}A script for all distros}{18}{}%
 \contentsline {section}{\numberline {8.2}A better way of writing the script}{18}{}%
+\contentsline {chapter}{\numberline {9}The find command}{19}{}%
+\contentsline {section}{\numberline {9.1}What is it?}{19}{}%
+\contentsline {section}{\numberline {9.2}The find command is very extensive}{19}{}%
+\contentsline {section}{\numberline {9.3}Execute commands if file is found}{20}{}%
+\contentsline {section}{\numberline {9.4}A more practical example of the find command}{20}{}%
+\contentsline {section}{\numberline {9.5}Using the find command responsibly}{21}{}%
