@@ -49,3 +49,8 @@
 \contentsline {section}{\numberline {9.3}Execute commands if file is found}{20}{}%
 \contentsline {section}{\numberline {9.4}A more practical example of the find command}{20}{}%
 \contentsline {section}{\numberline {9.5}Using the find command responsibly}{21}{}%
+\contentsline {chapter}{\numberline {10}The grep command}{22}{}%
+\contentsline {section}{\numberline {10.1}What is grep?}{22}{}%
+\contentsline {section}{\numberline {10.2}Grep options}{22}{}%
+\contentsline {section}{\numberline {10.3}Search accross multiple files}{23}{}%
+\contentsline {section}{\numberline {10.4}Combining options}{23}{}%

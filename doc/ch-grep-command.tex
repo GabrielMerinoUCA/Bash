@@ -1,0 +1,109 @@
+\chapter{The grep command}
+
+\section{What is grep?}
+
+Grep stands for Global Regular Expression Print. We don't have to get into regex for the tutorial whatsoever.
+You'll ussually see it used with pipes `$|$' but we haven't seen those yet so we'll stick with grep. What grep
+does is that it looks for a specific string from a file or any output.
+
+\lstinputlisting[
+    language=bash,
+    caption={10-bash.sh},
+    captionpos=t,
+    label={lst:10-bash},
+    breaklines=true]
+{../10-bash/10-bash.sh}
+
+\section{Grep options}
+
+First, we have the `-v' option which ussually means ``verbose'' or has to do with the command version.
+In this case, it's like a not operator. It will output all instances where the specified word does not appear.
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -v Port /etc/ssh/ssh_config
+\end{lstlisting}
+
+The next one is very useful as it tells us at which line the specified word was found.
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10.1-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -n Port /etc/ssh/ssh_config
+\end{lstlisting}
+
+Then we have the `-c' option for count, this will tell us how many instances of the specified word were
+found
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10.2-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -c Port /etc/ssh/ssh_config
+\end{lstlisting}
+
+If we wrote ``port'' instead of ``port'', it wouldn't have worked since grep is case sensitive. But we can
+use the `-i' option or ignore case. very self explanatory
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10.3-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -i port /etc/ssh/ssh_config
+\end{lstlisting}
+
+\pagebreak
+\section{Search accross multiple files}
+
+We can search accross more than a single file for any keyword.
+
+\lstinputlisting[
+    language=bash,
+    caption={10-bash.sh},
+    captionpos=t,
+    label={lst:10-bash},
+    breaklines=true]
+{../10-bash/10.1-bash.sh}
+
+The command will tell you the file name at which the instance of the keyword was found.\\ \\
+There is also recursive search in case you want to search accross subdirectories:
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10.3-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -r echo ./
+\end{lstlisting}
+
+\section{Combining options}
+
+This is something general for all commands (I suppose). Instead of putting a billion flags in your command,
+you can use a single flag and put all your options there.
+
+\begin{lstlisting}[
+    language=bash, 
+    caption={Terminal},
+    captionpos=t,
+    label={lst:10.3-terminal}, 
+    mathescape=true, 
+    breaklines=true]
+grep -nri error /var/log
+\end{lstlisting}
