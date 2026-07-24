@@ -54,3 +54,7 @@
 \contentsline {section}{\numberline {10.2}Grep options}{22}{}%
 \contentsline {section}{\numberline {10.3}Search accross multiple files}{23}{}%
 \contentsline {section}{\numberline {10.4}Combining options}{23}{}%
+\contentsline {chapter}{\numberline {11}For loops}{24}{}%
+\contentsline {section}{\numberline {11.1}Brace expansion}{24}{}%
+\contentsline {section}{\numberline {11.2}Brace expansion in for loops}{25}{}%
+\contentsline {section}{\numberline {11.3}Working with files}{25}{}%

@@ -1,0 +1,47 @@
+\chapter{For loops}
+
+\section{Brace expansion}
+
+This topic should be its own chapter. Brace expansion happens when we use braces `\{\}' in bash.
+You see braces are like wild cards and can help us create patterns to save ourselfs some effort. However,
+in contrast to wild cards, they are not file and path dependent but will instead work with any string pattern.
+Something to know is that brace expansions are simply to wide of a topic for us to check so we'll see some basic
+uses of it and call it a day.
+
+\lstinputlisting[
+    language=bash,
+    caption={11-bash.sh},
+    captionpos=t,
+    label={lst:11-bash},
+    breaklines=true]
+{../11-bash/11-bash.sh}
+
+Something to consider is that bash expands the contents of the BE (because they work like preprocessors)
+There is an order for which bash does it (since this process also happens with aliases, wild cards etc.).
+For instance, variable expansion happens before brace expansion. This means that `\{1..\$int\}'
+won't work. We might see a workaround for dynamic ranges later.
+
+\section{Brace expansion in for loops}
+
+Now lets get into what we are here for.
+
+
+\lstinputlisting[
+    language=bash,
+    caption={11-bash.sh},
+    captionpos=t,
+    label={lst:11.1-bash},
+    breaklines=true]
+{../11-bash/11.1-bash.sh}
+
+\section{Working with files}
+
+This is bash, of course we can iterate through a list of files instead of a list of numbers.
+
+\lstinputlisting[
+    language=bash,
+    caption={11-bash.sh},
+    captionpos=t,
+    label={lst:11.2-bash},
+    breaklines=true]
+{../11-bash/11.2-bash.sh}
